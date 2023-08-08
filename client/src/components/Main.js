@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
-import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
-import CameraIcon from "@mui/icons-material/PhotoCamera";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -11,13 +9,10 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Link } from 'react-router-dom';
-
 
 function Copyright() {
   return (
@@ -33,7 +28,9 @@ function Copyright() {
 }
 
 // TODO remove, this demo shouldn't need to reset the theme.
-const defaultTheme = createTheme();
+const defaultTheme = createTheme({
+  direction: "rtl",
+});
 
 export default function Main() {
   const baseURL = "http://localhost:3080";
@@ -43,7 +40,6 @@ export default function Main() {
     axios
       .get(`${baseURL}/paradoxes`)
       .then((response) => {
-        console.log(response.data)
         setCards([...response.data]);
       })
       .catch((error) => {
@@ -57,15 +53,7 @@ export default function Main() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          <CameraIcon sx={{ mr: 2 }} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Album layout
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <main>
+      <main dir="rtl">
         {/* Hero unit */}
         <Box
           sx={{
@@ -82,7 +70,7 @@ export default function Main() {
               color="text.primary"
               gutterBottom
             >
-              Paradoxes
+              פרדוקסים
             </Typography>
             <Typography
               variant="h5"
@@ -100,8 +88,8 @@ export default function Main() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">What is Paradox?</Button>
-              <Button variant="outlined">About us</Button>
+              <Button variant="contained">מה זה פרדוקס</Button>
+              <Button variant="outlined">קצת עלינו</Button>
             </Stack>
           </Container>
         </Box>
@@ -123,11 +111,16 @@ export default function Main() {
                       // 16:9
                       pt: "56.25%",
                     }}
-                    image="https://source.unsplash.com/random?wallpapers"
+                    image={card.image}
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="h2"
+                      right={true}
+                    >
+                      {card.title}
                     </Typography>
                     <Typography>
                       This is a media card. You can use this section to describe
@@ -135,8 +128,10 @@ export default function Main() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" href={`/paradox/${card.id}`}>View</Button>
-                    <Button size="small">Edit</Button>
+                    <Button size="small" href={`/paradox/${card.id}`}>
+                      הצג
+                    </Button>
+                    {/* <Button size="small">Edit</Button> */}
                   </CardActions>
                 </Card>
               </Grid>

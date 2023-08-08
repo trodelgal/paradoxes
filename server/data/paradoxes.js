@@ -1,43 +1,46 @@
 const Paradoxes = [
   {
     id: "1",
-    title: "Example Title 1",
+    title: "פרדוקס ראסל",
     author: "",
     description: "",
     content: "Example content 1",
-    image: "",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4f/Bertrand_Russell_%28c._April_1940%29.jpg",
   },
   {
     id: "2",
-    title: "Example Title 1",
+    title: "פרדוקס הספר",
     author: "",
     description: "",
     content: "Example content 1",
-    image: "",
+    image: "https://www.fajarmag.com/wp-content/uploads/2022/04/download-1.jpg",
   },
   {
     id: "3",
-    title: "Example Title 1",
+    title: "פרדוקס קנטור",
     author: "",
     description: "",
     content: "Example content 1",
-    image: "",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/A_href%3Dhttpwww.copyright.in_title%3DCopyright.in_-_Copyright_registration_and_fillingCopyright.in_-_Copyright_registration_and_fillinga.png/120px-A_href%3Dhttpwww.copyright.in_title%3DCopyright.in_-_Copyright_registration_and_fillingCopyright.in_-_Copyright_registration_and_fillinga.png",
   },
   {
     id: "4",
-    title: "Example Title 1",
+    title: "פרדוקס ברי",
     author: "",
     description: "",
     content: "Example content 1",
-    image: "",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Bertrand_Arthur_William_Russell%2C_3rd_Earl_Russell.jpg/375px-Bertrand_Arthur_William_Russell%2C_3rd_Earl_Russell.jpg",
   },
   {
     id: "5",
-    title: "Example Title 1",
+    title: "המספרים המעניינים",
     author: "",
     description: "",
     content: "Example content 1",
-    image: "",
+    image: "https://i.ytimg.com/vi/UWXPk54i8vc/mqdefault.jpg",
   },
 ];
 

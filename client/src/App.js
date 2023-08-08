@@ -1,13 +1,17 @@
 import "./App.css";
-import Main from "./Main";
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Main from "./components/Main";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <Router>
-      <Main></Main>;
-  </Router>
-  )
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route exact path={"/"} element={<Main />}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
