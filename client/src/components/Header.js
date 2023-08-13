@@ -6,9 +6,9 @@ const Header = () => {
   return (
     <AppBar position="relative" dir="rtl">
       <Toolbar>
-        <CameraIcon sx={{ mr: 2 }} />
+        {/* <CameraIcon sx={{ mr: 2 }} /> */}
         <Typography variant="h6" color="inherit" noWrap>
-          Album layout
+          זרקור למחקר 2023
         </Typography>
       </Toolbar>
     </AppBar>

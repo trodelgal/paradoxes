@@ -27,7 +27,7 @@ app.get("/paradoxes", cors(corsOptions), (req, res) => {
 
 app.get("/paradox/:id", cors(corsOptions), (req, res) => {
   const id = req.params.id;
-  res.send(Paradoxes[id]);
+  res.send(Paradoxes[id - 1]);
 });
 
 app.post("/posts", cors(corsOptions), (req, res) => {});
