@@ -2,11 +2,10 @@ import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
-import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import MainFeaturedPost from "./MainFeaturedPost";
-import Main from "./Main";
+import Box from "@mui/material/Box";
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme({
@@ -41,9 +40,20 @@ export default function SingleParadox() {
       <Container maxWidth="lg">
         <main dir="rtl">
           <MainFeaturedPost post={paradox} />
-          <Grid container spacing={5} sx={{ mt: 3 }}>
-            {/* <Main title="From the firehose" paradox={paradox} /> */}
-          </Grid>
+          <h2 style={{ marginBottom: 0 }}>{paradox.author}</h2>
+          <Box style={{ padding: "0 20px" }}>
+            <div>{paradox.about}</div>
+          </Box>
+          <hr></hr>
+          <h2 style={{ marginBottom: 0 }}>תיאור</h2>
+          <Box style={{ padding: "0 20px" }}>
+            <div>{paradox.content}</div>
+          </Box>
+          <hr></hr>
+          <h2 style={{ marginBottom: 0 }}>גישות ליישובו</h2>
+          <Box style={{ padding: "0 20px" }}>
+            <div>{paradox.solution}</div>
+          </Box>
         </main>
       </Container>
     </ThemeProvider>

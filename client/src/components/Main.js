@@ -74,8 +74,8 @@ export default function Main() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">מה זה פרדוקס</Button>
-              <Button variant="outlined">קצת עלינו</Button>
+              {/* <Button variant="contained">מה זה פרדוקס</Button>
+              <Button variant="outlined">קצת עלינו</Button> */}
             </Stack>
           </Container>
         </Box>
@@ -108,16 +108,12 @@ export default function Main() {
                     >
                       {card.title}
                     </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe
-                      the content.
-                    </Typography>
+                    <Typography>{card.description}</Typography>
                   </CardContent>
                   <CardActions>
                     <Button size="small" href={`/paradox/${card.id}`}>
                       הצג
                     </Button>
-                    {/* <Button size="small">Edit</Button> */}
                   </CardActions>
                 </Card>
               </Grid>
