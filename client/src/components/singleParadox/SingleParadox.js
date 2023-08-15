@@ -20,7 +20,7 @@ export default function SingleParadox() {
   const getParadox = useCallback(() => {
     console.log(id);
     axios
-      .get(`${baseURL}/paradox/${id}`)
+      .get(`${baseURL}/paradoxById/${id}`)
       .then((response) => {
         console.log(response.data);
         setParadox(response.data);
