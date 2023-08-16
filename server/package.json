@@ -4,7 +4,8 @@
   "description": "server",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "startDev": "nodem index.js"
   },
   "author": "Gal Trodel",
   "license": "ISC",
