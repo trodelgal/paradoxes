@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 var bodyParser = require("body-parser");
 const cors = require("cors");
@@ -7,7 +8,7 @@ const { Paradoxes } = require("./data/paradoxes");
 const path = require("path");
 
 const app = express();
-const port = 3080;
+const port = process.env.port || 3080;
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
@@ -39,5 +40,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`app listening on port ${port}`);
 });
