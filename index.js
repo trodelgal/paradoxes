@@ -13,25 +13,20 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-const corsOptions = {
-  origin: `${baseUrl.client}`,
-  credentials: true,
-};
-
-app.get("/welcome", cors(corsOptions), (req, res) => {
+app.get("/welcome", (req, res) => {
   res.send("Welcome to paradoxes server");
 });
 
-app.get("/paradoxes", cors(corsOptions), (req, res) => {
+app.get("/paradoxes", (req, res) => {
   res.send(Paradoxes);
 });
 
-app.get("/paradoxById/:id", cors(corsOptions), (req, res) => {
+app.get("/paradoxById/:id", (req, res) => {
   const id = req.params.id;
   res.send(Paradoxes[id - 1]);
 });
 
-app.post("/posts", cors(corsOptions), (req, res) => {});
+app.post("/posts", (req, res) => {});
 app.use(express.static("./client/build"));
 
 //conect client
