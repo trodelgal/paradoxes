@@ -1,13 +1,20 @@
 {
-  "name": "paradoxes",
+  "name": "server",
   "version": "1.0.0",
-  "description": "We've chosen 5 famous mathematical paradoxes to present in a single-page application. The selected paradoxes are:",
+  "description": "server app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-install": "cd client && npm install && cd ../server && npm install",
-    "heroku-postbuild": "npm run heroku-install && cd client && npm run build && cd ../server && npm start"
+    "start": "node index.js",
+    "startDev": "nodem index.js",
+    "heroku-postbuild": "cd client && npm  install && npm run build"
   },
-  "author": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  },
+  "author": "Gal Trodel",
   "license": "ISC"
 }
