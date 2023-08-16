@@ -13,7 +13,10 @@ const defaultTheme = createTheme({
 });
 
 export default function SingleParadox() {
-  const baseURL = "http://localhost:3080";
+  const loc = window.location;
+  const baseURL = `${loc.protocol}//${loc.hostname}${
+    loc.hostname === "localhost" ? ":3080" : ""
+  }`;
   let { id } = useParams();
 
   const [paradox, setParadox] = useState({});

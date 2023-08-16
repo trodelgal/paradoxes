@@ -19,7 +19,10 @@ const defaultTheme = createTheme({
 });
 
 export default function Main() {
-  const baseURL = "http://localhost:3080";
+  const loc = window.location;
+  const baseURL = `${loc.protocol}//${loc.hostname}${
+    loc.hostname === "localhost" ? ":3080" : ""
+  }`;
 
   const [cards, setCards] = useState([]);
   const getCards = useCallback(() => {
