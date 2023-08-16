@@ -8,7 +8,7 @@ const { Paradoxes } = require("./data/paradoxes");
 const path = require("path");
 
 const app = express();
-const port = process.env.port || 3080;
+const port = process.env.PORT || 3080;
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
